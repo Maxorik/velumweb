@@ -8,11 +8,29 @@
   font-size: 1em;
 }
 
+button {
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 7px;
+}
+
 img, video {
   max-width: 100%;
   height: auto;
   display: block;
   vertical-align: middle;
+}
+
+svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+audio {
+  display: none;
 }
 
 .main-bg {
