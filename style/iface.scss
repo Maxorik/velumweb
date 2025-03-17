@@ -1,4 +1,4 @@
-.iface-container {
+.iface-main-container {
   position: absolute;
   top: 2vh;
   left: 2vh;
@@ -8,6 +8,13 @@
   border-radius: 1rem;
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   color: #fff;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.iface-group-container {
   display: flex;
   align-items: center;
   flex-direction: column;
