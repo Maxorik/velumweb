@@ -56,8 +56,19 @@ const MusicPlayer: FC<MusicPlayerProps> = ({ play, setPlay, volume }) => {
 };
 
 const VolumeSettings: FC<VolumePlayerProps> = ({ volume, setVolume }) => {
-    // FIXME скрытие по таймеру
     const [showSettings, setShowSettings] = useState<boolean>(false);
+    const hideVolumeTimer: Ref<number> = useRef(0);
+    const showHoveringForm = (state: boolean) => {
+        if (state) {
+            setShowSettings(true);
+            clearTimeout(hideVolumeTimer.current)
+        } else {
+            const timerId = setTimeout(() => {
+                setShowSettings(false)
+            }, 1000);
+            hideVolumeTimer.current = timerId;
+        }
+    }
 
     /** отрисовка всплывающей формы */
     const volumeBtnRef: Ref<HTMLButtonElement> = useRef(null);
@@ -86,8 +97,8 @@ const VolumeSettings: FC<VolumePlayerProps> = ({ volume, setVolume }) => {
                 className='iface-btn'
                 onClick={ setMute }
                 ref={ volumeBtnRef }
-                onMouseEnter={() => setShowSettings(true)}
-                onMouseLeave={() => setShowSettings(false)}
+                onMouseEnter={() => showHoveringForm(true)}
+                onMouseLeave={() => showHoveringForm(false)}
             >
                 { volume === 0 ?
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"
@@ -103,11 +114,12 @@ const VolumeSettings: FC<VolumePlayerProps> = ({ volume, setVolume }) => {
                 }
             </button>
             { showSettings &&
-                <div className='hovering-form'
-                     style={{ height: `${volumeHoveringFormHeight}px`, top: volumeHoveringFormTop.current + 'px', padding: '1px 10px' }}
-                                   // onMouseEnter={() => setShowSettings(true)}
-                                   // onMouseLeave={() => setShowSettings(false)}
-                                >
+                <div
+                    className='hovering-form'
+                    style={{ height: `${volumeHoveringFormHeight}px`, top: volumeHoveringFormTop.current + 'px', padding: '1px 10px' }}
+                    onMouseEnter={() => showHoveringForm(true)}
+                    onMouseLeave={() => showHoveringForm(false)}
+                >
                     <input
                         type="range"
                         min="0"
@@ -116,7 +128,6 @@ const VolumeSettings: FC<VolumePlayerProps> = ({ volume, setVolume }) => {
                         value={volume}
                         onChange={(event) => setVolume(+event.target.value)}
                     />
-
                 </div> }
         </div>
     )
