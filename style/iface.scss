@@ -46,10 +46,22 @@
   left: 100%;
   margin-left: 2px;
   border-radius: 4px;
-  padding: 10px;
-  background: #171717;
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.volume-window {
+  height: 31px;
+  padding: 1px 10px;
+  background: #171717;
+}
+
+.manager-window {
+  width: 420px;
+  height: 380px;
+  padding: 10px;
+
+  background: #171717;
 }
