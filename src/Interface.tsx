@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { MusicInterface } from "./MusicInterface";
+import { MusicInterface } from "./Lofi/Parent";
 import '../style/iface.scss'
 
 export const UserInterface: FC = () => {

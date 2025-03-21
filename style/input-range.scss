@@ -13,6 +13,10 @@ input[type="range"] {
   overflow: hidden;
 }
 
+.input-range-big {
+  width: 200px !important;
+}
+
 /* === WebKit specific styles === */
 input[type="range"],
 input[type="range"]::-webkit-slider-runnable-track,

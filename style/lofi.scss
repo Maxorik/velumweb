@@ -1,0 +1,19 @@
+.volume-window {
+  height: 31px;
+  padding: 1px 10px;
+  background: #171717;
+}
+
+.manager-window {
+  width: 420px;
+  height: 380px;
+  padding: 10px;
+  background-color: rgba(38, 38, 38, .9);
+}
+
+.ambient-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}

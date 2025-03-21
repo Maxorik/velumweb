@@ -6,7 +6,6 @@
   height: 96vh;
   background: rgba(0, 0, 0, 0.62);
   border-radius: 1rem;
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   color: #fff;
   display: flex;
   align-items: center;
@@ -50,18 +49,4 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.volume-window {
-  height: 31px;
-  padding: 1px 10px;
-  background: #171717;
-}
-
-.manager-window {
-  width: 420px;
-  height: 380px;
-  padding: 10px;
-
-  background: #171717;
 }

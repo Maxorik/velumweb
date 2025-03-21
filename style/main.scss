@@ -1,4 +1,5 @@
 @import './input-range.scss';
+@import './lofi.scss';
 
 * {
   margin: 0;
@@ -47,4 +48,10 @@ audio {
   background-repeat: no-repeat;
   background-size: cover;
   transition: all .1s;
+}
+
+.title {
+  font-size: .875rem;
+  line-height: 1.25rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
