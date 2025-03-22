@@ -7,6 +7,7 @@ export const UserInterface: FC = () => {
         <div className='iface-main-container'>
             <div className='iface-spacer' />
             <MusicInterface />
+            <div className='divider' />
         </div>
     )
 }
