@@ -1,5 +1,6 @@
-import React, {useState, FC, useRef, Ref, useEffect} from "react";
+import React, {useState, FC, useRef, Ref, useEffect, ReactNode} from "react";
 import { saveWindowPosition, getWindowPosition } from '../Utils/SnapshotHelper'
+import '../../style/window.scss'
 
 interface IPosition {
     x: number,
@@ -9,7 +10,7 @@ interface IPosition {
 interface IWindowProps {
     id: string,
     title?: string,
-    content?: string
+    content?: ReactNode
 }
 
 export const Window: FC<IWindowProps> = ({ id, title, content}) => {
@@ -65,7 +66,15 @@ export const Window: FC<IWindowProps> = ({ id, title, content}) => {
                 left: position.x
             }}
         >
-            { title }
+            <div className='window-header'>
+                { <span className='window-title'> title </span> }
+                <div className='window-header-iface'>
+                    <div className='window-header-btn btn-hide'/>
+                    <div className='window-header-btn btn-close'/>
+                </div>
+            </div>
+            <hr />
+            { content }
         </div>
     );
 };

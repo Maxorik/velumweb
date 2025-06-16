@@ -72,17 +72,3 @@ audio {
   border-radius: 4px;
   background-color: #fff;
 }
-
-.modal {
-  min-width: 200px;
-  min-height: 100px;
-  background: rgba(0, 0, 0, 0.6);
-  filter: drop-shadow(1px 1px 0 rgb(20, 20, 20));
-  border-radius: 5px;
-  color: #fff;
-  gap: 5px;
-  position: absolute;
-  cursor: grab;
-  padding: 5px;
-  user-select: none;
-}

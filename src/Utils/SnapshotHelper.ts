@@ -10,8 +10,5 @@ export const getWindowPosition = (id: string) => {
 
 /** сохранить положение окна */
 export const saveWindowPosition = (id: string, position: {x: number, y: number}) => {
-
-    console.log(position)
-
     localStorage.setItem(`velum-window-${id}`, JSON.stringify(position))
 }

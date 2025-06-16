@@ -1,0 +1,62 @@
+.modal {
+  min-width: 200px;
+  min-height: 100px;
+  width: auto;
+  background: rgba(0, 0, 0, 0.6);
+  filter: drop-shadow(1px 1px 0 rgb(20, 20, 20));
+  border-radius: 5px;
+  color: #fff;
+  gap: 5px;
+  position: absolute;
+  cursor: grab;
+  padding: 5px;
+  user-select: none;
+}
+
+.window-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.window-title {
+  //color: #f5924f;
+}
+
+.window-header-iface {
+  display: flex;
+  gap: 4px;
+  width: 40px;
+}
+
+.window-header-btn {
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  background: #171717;
+  cursor: pointer;
+  border: 1px solid #fff;
+  color: #f5924f;
+  transition: all .1s;
+  position: relative;
+  text-align: center;
+
+  &::after {
+    content: '';
+    position: relative;
+    top: -5px;
+  }
+
+  &.btn-close::after {
+    content: 'x';
+  }
+
+  &.btn-hide::after {
+    content: '\2212';
+    font-weight: bold;
+  }
+
+  &:hover {
+    border: 1px solid #f5924f;
+  }
+}
