@@ -10,6 +10,6 @@ root.render(
     <>
         <VideoBackground />
         <UserInterface />
-        <Window id='test' title='hello' content={<span>это контент</span>}/>
+        {/*<Window id='test' title='hello' content={<span>это контент</span>}/>*/}
     </>
 )
