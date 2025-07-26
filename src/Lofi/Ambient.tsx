@@ -1,4 +1,6 @@
 import {useEffect, useRef, useState, FC, Ref} from "react";
+import { isMobile } from '../../App'
+
 import rain from '../../assets/sounds/rain.mp3'
 import campfire from '../../assets/sounds/campfire.mp3'
 import whitenoise from '../../assets/sounds/whitenoise.mp3'
@@ -15,7 +17,7 @@ export const Ambient: FC = () => {
 
     useEffect(() => {
         const managerBtnCoordinates = managerBtnRef.current.getBoundingClientRect();
-        managerHoveringFormTop.current = managerBtnCoordinates.top - 15;
+        managerHoveringFormTop.current = !isMobile ? managerBtnCoordinates.top - 15 : -59;
     }, [managerWindow]);
 
     return(
@@ -33,7 +35,7 @@ export const Ambient: FC = () => {
             </button>
             <div
                 className={ managerWindow ? 'hovering-form manager-window' : 'collapsed'}
-                style={{ top: managerHoveringFormTop.current + 'px' }}
+                style={{ top: managerHoveringFormTop.current + (isMobile ? 'vh' : 'px') }}
             >
                 <div className='ambient-main-container'>
                     { Object.keys(ambientSettings).map(type => <AmbientPlayer type={ type } key={ type }/>)}

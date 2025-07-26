@@ -1,0 +1,26 @@
+@media only screen and (max-device-width: 1000px) {
+  .iface-main-container {
+    top: 93vh;
+    width: 89vw;
+    height: auto;
+    justify-content: center;
+    flex-direction: row;
+  }
+  .divider {
+    display: none;
+  }
+  .iface-group-container {
+    flex-direction: row;
+  }
+  .hovering-form {
+    left: 0;
+  }
+  .manager-window {
+    width: 93%;
+    padding: 0 10px;
+  }
+  .ambient-container {
+    gap: 14px;
+  }
+
+  }
