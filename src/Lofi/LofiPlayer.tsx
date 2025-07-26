@@ -1,4 +1,4 @@
-import {useEffect, useRef, FC, Ref, useState} from "react";
+import React, {useEffect, useRef, FC, Ref, useState} from "react";
 
 interface MusicPlayerProps {
     play: boolean;
@@ -11,8 +11,15 @@ export const LofiPlayer: FC<MusicPlayerProps> = ({ volume }) => {
     const [play, setPlay] = useState<boolean>(false);
     const playerRef: Ref<HTMLAudioElement> = useRef(null);
     const playerHandler = (state: boolean) => {
-        state === true ? playerRef.current.play() : playerRef.current.pause();
-        setPlay(state);
+        if (playerRef.current) {
+            if (state) {
+                playerRef.current.src = 'https://live.lofiradio.ru/lofi_mp3_320?fb9e';
+                playerRef.current.play()
+            } else {
+                playerRef.current.pause();
+            }
+            setPlay(state);
+        }
     }
 
     useEffect(() => {
@@ -34,9 +41,7 @@ export const LofiPlayer: FC<MusicPlayerProps> = ({ volume }) => {
                 </svg>
             }
         </button>
-        <audio controls ref={ playerRef } >
-            <source src="https://live.lofiradio.ru/lofi_mp3_320?fb9e" type="audio/aac" />
-        </audio>
+        <audio controls ref={ playerRef } />
     </div>
 };
 
