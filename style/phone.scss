@@ -1,6 +1,14 @@
 @media only screen and (max-device-width: 1000px) {
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  :root {
+    --vh: 1vh;
+  }
   .iface-main-container {
-    top: 93vh;
+    top: calc(var(--vh) * 93);
     width: 89vw;
     height: auto;
     justify-content: center;
@@ -18,6 +26,7 @@
   .manager-window {
     width: 93%;
     padding: 0 10px;
+    top: calc(var(--vh) * -44);
   }
   .ambient-container {
     gap: 14px;

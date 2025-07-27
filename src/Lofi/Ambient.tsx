@@ -9,7 +9,7 @@ export const Ambient: FC = () => {
 
     useEffect(() => {
         const managerBtnCoordinates = managerBtnRef.current.getBoundingClientRect();
-        managerHoveringFormTop.current = !isMobile ? managerBtnCoordinates.top - 15 : -59;
+        managerHoveringFormTop.current = managerBtnCoordinates.top - 15;
     }, [managerWindow]);
 
     return(
@@ -27,7 +27,7 @@ export const Ambient: FC = () => {
             </button>
             <div
                 className={ managerWindow ? 'hovering-form manager-window' : 'collapsed'}
-                style={{ top: managerHoveringFormTop.current + (isMobile ? 'vh' : 'px') }}
+                style={ !isMobile ? { top: managerHoveringFormTop.current + 'px' } : {}}
             >
                 <div className='ambient-main-container'>
                     { Object.keys(ambientSettings).map(type => <AmbientPlayer type={ type } key={ type }/>)}

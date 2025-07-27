@@ -1,3 +1,4 @@
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { VideoBackground } from "./src/Background";
 import { UserInterface } from "./src/Forms/Interface";
