@@ -26,10 +26,13 @@
   .manager-window {
     width: 93%;
     padding: 0 10px;
-    top: calc(var(--vh) * -44);
+    top: calc(var(--vh) * -54);
   }
   .ambient-container {
     gap: 14px;
+  }
+  .input-range-big {
+    width: 180px!important;
   }
 
   }
