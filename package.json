@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && git add docs"
+    "build": "vite build && copy CNAME docs\\ && git add docs"
   },
   "keywords": [],
   "author": "maxorik",
